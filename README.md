@@ -1,5 +1,6 @@
 ![NcduColors preview](assets/images/colorful_preview.png "Preview of Ncdu fully Red, Green, Yellow, Blue, Magenta, Cyan")
 
+![PyPI](https://img.shields.io/pypi/v/ncducolors?color=%23ff6644&style=flat-square)
 ![Dependencies: 0](https://img.shields.io/badge/dependencies-0-green?style=flat-square&logo=PyPi&logoColor=green)
 ![License: MIT](https://img.shields.io/github/license/Midblyte/NcduColors?style=flat-square&logo=Unlicense&color=blue&logoColor=blue)
 
@@ -9,6 +10,7 @@
 >   - [Why?](#why)
 >   - [Why not just contributing to Ncdu or forking it?](#why-not-just-contributing-to-ncdu-or-forking-it)
 >   - [What about changing the default color palette?](#what-about-changing-the-default-color-palette)
+> - [Installation](#installation)
 > - [**How to use**](#how-to-use)
 >   - [0. If you want to patch a _copy_ of Ncdu](#0-if-you-want-to-patch-a-copy-of-ncdu)
 >   - [1. Extract the default configuration](#1-extract-the-default-configuration)
@@ -82,6 +84,14 @@ Thus, allowing everybody to painlessy (more or less) patch their own copy of Ncd
 
 Also: not everyone loves the black and white (`off`) theme.
 
+
+## Installation
+
+Install NcduColors from [PyPI](https://pypi.org/project/NcduColors/) using Pip:
+
+```bash
+pip install ncducolors
+```
 
 ## How to use
 
