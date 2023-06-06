@@ -19,7 +19,7 @@ setup(
     description="Ncdu themes patcher",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/Midblyte/NcduColors",
+    url="https://github.com/Midblyte/NcduColors",
     author="Midblyte",
     author_email="ncducolors@midblyte.anonaddy.me",
     license="MIT",
