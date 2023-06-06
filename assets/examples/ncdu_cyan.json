@@ -1,0 +1,158 @@
+{
+    "ncdu": null,
+    "offset": null,
+    "off": {
+        "default": {
+            "fg": null,
+            "bg": null,
+            "a": null
+        },
+        "box_title": {
+            "fg": null,
+            "bg": null,
+            "a": "Bold"
+        },
+        "hd": {
+            "fg": null,
+            "bg": null,
+            "a": "Reverse"
+        },
+        "sel": {
+            "fg": null,
+            "bg": null,
+            "a": "Reverse"
+        },
+        "num": {
+            "fg": null,
+            "bg": null,
+            "a": null
+        },
+        "num_hd": {
+            "fg": null,
+            "bg": null,
+            "a": "Reverse"
+        },
+        "num_sel": {
+            "fg": null,
+            "bg": null,
+            "a": "Reverse"
+        },
+        "key": {
+            "fg": null,
+            "bg": null,
+            "a": "Bold"
+        },
+        "key_hd": {
+            "fg": null,
+            "bg": null,
+            "a": "Bold + Reverse"
+        },
+        "dir": {
+            "fg": null,
+            "bg": null,
+            "a": null
+        },
+        "dir_sel": {
+            "fg": null,
+            "bg": null,
+            "a": "Reverse"
+        },
+        "flag": {
+            "fg": null,
+            "bg": null,
+            "a": null
+        },
+        "flag_sel": {
+            "fg": null,
+            "bg": null,
+            "a": "Reverse"
+        },
+        "graph": {
+            "fg": null,
+            "bg": null,
+            "a": null
+        },
+        "graph_sel": {
+            "fg": null,
+            "bg": null,
+            "a": "Reverse"
+        }
+    },
+    "dark": {
+        "default": {
+            "fg": "Cyan",
+            "bg": null,
+            "a": null
+        },
+        "box_title": {
+            "fg": "Cyan",
+            "bg": null,
+            "a": null
+        },
+        "hd": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        },
+        "sel": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        },
+        "num": {
+            "fg": "Cyan",
+            "bg": null,
+            "a": null
+        },
+        "num_hd": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        },
+        "num_sel": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        },
+        "key": {
+            "fg": "Cyan",
+            "bg": null,
+            "a": null
+        },
+        "key_hd": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        },
+        "dir": {
+            "fg": "Cyan",
+            "bg": null,
+            "a": null
+        },
+        "dir_sel": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        },
+        "flag": {
+            "fg": "Cyan",
+            "bg": null,
+            "a": null
+        },
+        "flag_sel": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        },
+        "graph": {
+            "fg": "Cyan",
+            "bg": null,
+            "a": null
+        },
+        "graph_sel": {
+            "fg": "Black",
+            "bg": "Cyan",
+            "a": null
+        }
+    }
+}

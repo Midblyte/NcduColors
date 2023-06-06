@@ -25,6 +25,7 @@
 >     - [Key object](#key-object)
 >       - [Color object](#color-object)
 >       - [Attribute object](#attribute-object)
+> - [Examples](#examples)
 > - [What has changed?](#what-has-changed)
 > - [Disclaimer](#disclaimer)
 > - [Future improvements](#future-improvements)
@@ -277,6 +278,11 @@ A value of `null` resets all attributes.
 > Note: some texts might appear to be dimmed, but since their attributes are hardencoded elsewhere, they can't be edited via NcduColors.
 
 > Remember: not every terminal supports all the available attributes, and sometimes they might deliberately decide to ignore them (e.g. `Blink`), while others may support it but with different behavior.
+
+
+## Examples
+
+Check the [examples/](examples) subdirectory.
 
 
 ## What has changed?
