@@ -192,7 +192,7 @@ In case something goes wrong, or you just want the plain old Ncdu, don't worry. 
 
 ### Config object
 
-| key    | typed                                                              | notes                                                   |
+| key    | type                                                               | notes                                                   |
 |--------|--------------------------------------------------------------------|---------------------------------------------------------|
 | ncdu   | [Path](https://docs.python.org/3/library/pathlib.html) (as string) | Overridden by `--ncdu`; autoresolved if `null`          |
 | offset | Integer                                                            | Depends on the binary                                   |
@@ -203,23 +203,23 @@ In case something goes wrong, or you just want the plain old Ncdu, don't worry. 
 
 ### Theme object
 
-| key       | notes                                                                                                                                                                                             |
-|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| default   | Used for most of the UI:<br/> - file names (unselected)<br/>- help pages                                                                                                                          |
-| box_title | Used for windows titles:</br>- "ncdu help"</br>- "Item info"</br> - "Confirm delete"                                                                                                              |
-| hd        | - Header base text<br/>- Footer base text</br>- Help page title (selected)                                                                                                                        |
-| sel       | File row (selected)                                                                                                                                                                               |
-| num       | Numbers only, without unit:<br/> - file size (unselected)</br>- size in percentage (unselected)</br>- child items count (unselected)</br>- disk usage (Item view)</br>- apparent size (Item view) |
-| num_hd    | Numbers only, without unit (footer)                                                                                                                                                               |
-| num_sel   | Numbers only, without unit:<br/> - file size (selected)</br>- size in percentage (selected)                                                                                                       |
-| key       | Highlighted keys ("Item info", "ncdu help")                                                                                                                                                       |
-| key_hd    | - "?" (header)</br>- "1", "2", "3" ("ncdu help"; selected)                                                                                                                                        |
-| dir       | - File name (directories; unselected)<br/>- Current directory (under the header)                                                                                                                  |
-| dir_sel   | File name (directories; selected)                                                                                                                                                                 |
-| flag      | - File rows's leftmost character (unselected)<br/>- Flags ("ncdu help" -> "2:Format")                                                                                                             |
-| flag_sel  | File rows's leftmost character (selected)                                                                                                                                                         |
-| graph     | Graphical size percentage (unselected)                                                                                                                                                            |
-| graph_sel | Graphical size percentage (selected)                                                                                                                                                              |
+| key       | type               | notes                                                                                                                                                                                             |
+|-----------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| default   | [Key](#key-object) | Used for most of the UI:<br/> - file names (unselected)<br/>- help pages                                                                                                                          |
+| box_title | [Key](#key-object) | Used for windows titles:</br>- "ncdu help"</br>- "Item info"</br> - "Confirm delete"                                                                                                              |
+| hd        | [Key](#key-object) | - Header base text<br/>- Footer base text</br>- Help page title (selected)                                                                                                                        |
+| sel       | [Key](#key-object) | File row (selected)                                                                                                                                                                               |
+| num       | [Key](#key-object) | Numbers only, without unit:<br/> - file size (unselected)</br>- size in percentage (unselected)</br>- child items count (unselected)</br>- disk usage (Item view)</br>- apparent size (Item view) |
+| num_hd    | [Key](#key-object) | Numbers only, without unit (footer)                                                                                                                                                               |
+| num_sel   | [Key](#key-object) | Numbers only, without unit:<br/> - file size (selected)</br>- size in percentage (selected)                                                                                                       |
+| key       | [Key](#key-object) | Highlighted keys ("Item info", "ncdu help")                                                                                                                                                       |
+| key_hd    | [Key](#key-object) | - "?" (header)</br>- "1", "2", "3" ("ncdu help"; selected)                                                                                                                                        |
+| dir       | [Key](#key-object) | - File name (directories; unselected)<br/>- Current directory (under the header)                                                                                                                  |
+| dir_sel   | [Key](#key-object) | File name (directories; selected)                                                                                                                                                                 |
+| flag      | [Key](#key-object) | - File rows's leftmost character (unselected)<br/>- Flags ("ncdu help" -> "2:Format")                                                                                                             |
+| flag_sel  | [Key](#key-object) | File rows's leftmost character (selected)                                                                                                                                                         |
+| graph     | [Key](#key-object) | Graphical size percentage (unselected)                                                                                                                                                            |
+| graph_sel | [Key](#key-object) | Graphical size percentage (selected)                                                                                                                                                              |
 
 ### Key object
 
