@@ -136,7 +136,7 @@ class Handlers:
 
 def get_parser():
     parser = argparse.ArgumentParser(prog="ncducolors", usage="%(prog)s [--ncdu PATH] <action> [...]", add_help=False)
-    parser.add_argument("--help", action="store_true", default=argparse.SUPPRESS, help="Show this help message and exit")
+    parser.add_argument("--help", "-h", action="store_true", default=argparse.SUPPRESS, help="Show this help message and exit")
     parser.add_argument("--ncdu", type=Path, default=shutil.which("ncdu"), help="Path of Ncdu binary")
     parser.add_argument("--version", "-v", action="version", version=f"%(prog)s {__version__}")
 
