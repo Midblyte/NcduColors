@@ -193,13 +193,13 @@ In case something goes wrong, or you just want the plain old Ncdu, don't worry. 
 
 ### Config object
 
-| key    | type                                                               | notes                                                   |
-|--------|--------------------------------------------------------------------|---------------------------------------------------------|
-| ncdu   | [Path](https://docs.python.org/3/library/pathlib.html) (as string) | Overridden by `--ncdu`; autoresolved if `null`          |
-| offset | Integer                                                            | Depends on the binary                                   |
-| off    | [Theme](#theme-object)                                             | Black and white theme                                   |
-| dark   | [Theme](#theme-object)                                             | Dark, colorful theme                                    |
-| darkbg | [Theme](#theme-object) (if available)                              | Like `darkbg` with forced black background (Ncdu 1.17+) |
+| key    | type                                                               | notes                                                 |
+|--------|--------------------------------------------------------------------|-------------------------------------------------------|
+| ncdu   | [Path](https://docs.python.org/3/library/pathlib.html) (as string) | Overridden by `--ncdu`; autoresolved if `null`        |
+| offset | Integer                                                            | Depends on the binary                                 |
+| off    | [Theme](#theme-object)                                             | Black and white theme                                 |
+| dark   | [Theme](#theme-object)                                             | Dark, colorful theme                                  |
+| darkbg | [Theme](#theme-object) (if available)                              | Like `dark` with forced black background (Ncdu 1.17+) |
 
 
 ### Theme object
