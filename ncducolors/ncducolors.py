@@ -16,7 +16,7 @@ from .theme import Theme
 
 class NcduColors:
     def __init__(self, ncdu: Path):
-        self.ncdu: Path = ncdu
+        self.ncdu: Path = ncdu.absolute()
 
         self.version: tuple[int] = self._load_version()
         self.supports_darkbg = self.version >= (1, 17)
