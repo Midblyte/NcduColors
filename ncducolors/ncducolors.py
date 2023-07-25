@@ -83,19 +83,27 @@ class NcduColors:
 
         return themes
 
-    def load_config(self, offset: int) -> Config:
+    def load_config(self, offset: Optional[int]) -> Config:
+        if offset is not None:
+            effective_offset = offset
+        else:
+            try:
+                effective_offset = self.extract_default_config().offset
+            except ValueError:
+                raise ValueError("'offset' is None and Ncdu doesn't have its default config in it. Please revert or specify offset.")
+
         themes: tuple[Theme] = NcduColors.binary_to_themes(
             binary=self.binary,
-            offset=offset,
+            offset=effective_offset,
             supports_darkbg=self.supports_darkbg,
             byteorder=self.byteorder
         )
 
-        return Config(ncdu=self.ncdu, offset=offset, **{theme.name: theme for theme in themes})
+        return Config(ncdu=self.ncdu, offset=effective_offset, **{theme.name: theme for theme in themes})
 
     def extract_default_config(self) -> Config:
         if self.byteorder == "little":  # todo: big endian sequences
-            offset = self.binary.find(Sequence.DEFAULT_LE_WITH_DARKBG if self.supports_darkbg else Sequence.DEFAULT_LE_WITHOUT_DARKBG)
+            offset: int = self.binary.find(Sequence.DEFAULT_LE_WITH_DARKBG if self.supports_darkbg else Sequence.DEFAULT_LE_WITHOUT_DARKBG)
         else:  # todo: big endian sequences
             raise NotImplementedError("Big endian ELF files are not supported yet.")
 
@@ -124,16 +132,22 @@ class NcduColors:
         )
 
     def apply_config(self, new_config: Config) -> bool:
-        offset: int = new_config.offset
+        offset: Optional[int] = new_config.offset
 
         current_config: Config = self.load_config(offset=offset)
+
+        if offset is None:
+            offset = current_config.offset
+
+        if new_config.darkbg is None and self.supports_darkbg:
+            new_config.darkbg = current_config.darkbg
+
+        assert len(current_config.as_bytes()) == len(new_bytes := new_config.as_bytes())
 
         if current_config.as_dict() == new_config.as_dict():
             return False
 
         with open(self.ncdu, "r+b") as edit:
-            new_bytes = new_config.as_bytes()
-
             self.binary[offset: offset + len(new_bytes)] = new_bytes
 
             with mmap.mmap(edit.fileno(), 0) as mem:
