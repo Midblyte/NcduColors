@@ -2,6 +2,7 @@ import json
 from io import TextIOWrapper
 from pathlib import Path
 from typing import Optional
+from shutil import which
 
 from ncducolors.theme import Theme
 
@@ -29,7 +30,7 @@ class Config:
             raise TypeError("Not a serialized Config object.")
 
         return Config(
-            ncdu=Path(dct["ncdu"]).expanduser(),
+            ncdu=Path(dct["ncdu"]).expanduser() if dct["ncdu"] is not None else Path(which("ncdu")),
             offset=dct["offset"],
             **{k: Theme.from_dict(k, dct[k]) for k in ("off", "dark", "darkbg") if k in dct}
         )
