@@ -158,3 +158,8 @@ cython_debug/
 # PyCharm
 .idea/
 
+# Project-specific
+# ----------------
+
+# Tests
+tests/files/
