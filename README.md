@@ -137,6 +137,7 @@ It's a good practice to always make backups, even if not strictly needed.
 cp ncdu-config.json ncdu-defaults.json
 ```
 
+
 ### 2. Edit the configuration file
 
 Use your editor of choice to edit the values.
@@ -149,6 +150,7 @@ xdg-open ncdu-config.json
 > Have a look to the [table of reference](#table-of-reference) for some help.
 
 Once finished, **save** and go ahead.
+
 
 ### 3. Apply the new configuration
 
@@ -282,7 +284,7 @@ A value of `null` resets all attributes.
 
 ## Examples
 
-Check the [examples/](examples) subdirectory.
+Check the [examples/](assets/examples) subdirectory.
 
 
 ## What has changed?
