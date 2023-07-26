@@ -13,9 +13,6 @@ class Key:
         self.bg = bg
         self.a = a
 
-        if self.fg is None:
-            y = 2
-
     @staticmethod
     @cache
     def get_format(byteorder: Endianness = "little") -> str:
