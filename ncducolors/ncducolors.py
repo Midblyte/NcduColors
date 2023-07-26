@@ -90,7 +90,7 @@ class NcduColors:
             try:
                 effective_offset = self.extract_default_config().offset
             except ValueError:
-                raise ValueError("'offset' is None and Ncdu doesn't have its default config in it. Please revert or specify offset.")
+                raise ValueError("'offset' is None and Ncdu doesn't have its default config in it. Please revert or specify the offset.")
 
         themes: tuple[Theme] = NcduColors.binary_to_themes(
             binary=self.binary,
@@ -109,7 +109,7 @@ class NcduColors:
 
         if offset == -1:
             raise ValueError("Default config pattern not found in the binary file.\n"
-                             "You can only to do a 'apply-config' (on the default config) or 'revert'.")
+                             "You can only to do a 'apply-config' (on the default config) or a 'revert'.")
 
         default_config: Config = self.load_config(offset=offset)
 
