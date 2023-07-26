@@ -27,8 +27,7 @@ class NcduColors:
         if self.binary[5] == 1:
             self.byteorder: Endianness = "little"
         elif self.binary[5] == 2:
-            # self.byteorder: Endianness = "big"
-            raise NotImplementedError("Big endian ELF files are not supported yet.")
+            self.byteorder: Endianness = "big"
         else:
             raise ValueError("Malformed ELF file.")
 
@@ -102,10 +101,10 @@ class NcduColors:
         return Config(ncdu=self.ncdu, offset=effective_offset, **{theme.name: theme for theme in themes})
 
     def extract_default_config(self) -> Config:
-        if self.byteorder == "little":  # todo: big endian sequences
+        if self.byteorder == "little":
             offset: int = self.binary.find(Sequence.DEFAULT_LE_WITH_DARKBG if self.supports_darkbg else Sequence.DEFAULT_LE_WITHOUT_DARKBG)
-        else:  # todo: big endian sequences
-            raise NotImplementedError("Big endian ELF files are not supported yet.")
+        else:
+            offset: int = self.binary.find(Sequence.DEFAULT_BE_WITH_DARKBG if self.supports_darkbg else Sequence.DEFAULT_BE_WITHOUT_DARKBG)
 
         if offset == -1:
             raise ValueError("Default config pattern not found in the binary file.\n"
@@ -120,8 +119,8 @@ class NcduColors:
                                      byteorder: Endianness = "little") -> Config:
         if byteorder == "little":
             binary = Sequence.DEFAULT_LE_WITH_DARKBG if with_darkbg else Sequence.DEFAULT_LE_WITHOUT_DARKBG
-        else:  # todo: big endian sequences
-            raise NotImplementedError("Big endian ELF files are not supported yet.")
+        else:
+            binary = Sequence.DEFAULT_BE_WITH_DARKBG if with_darkbg else Sequence.DEFAULT_BE_WITHOUT_DARKBG
 
         themes = NcduColors.binary_to_themes(binary=binary, offset=0, supports_darkbg=with_darkbg, byteorder=byteorder)
 
