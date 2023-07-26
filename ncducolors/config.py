@@ -5,6 +5,7 @@ from typing import Optional
 from shutil import which
 
 from ncducolors.theme import Theme
+from ncducolors import Endianness
 
 
 class Config:
@@ -42,7 +43,7 @@ class Config:
             **{k: getattr(self, k).as_dict() for k in (("off", "dark", "darkbg") if self.darkbg is not None else ("off", "dark"))}
         }
 
-    def as_bytes(self) -> bytes:
+    def as_bytes(self, byteorder: Endianness = "little") -> bytes:
         if self.darkbg is None:
             themes = self.off, self.dark
         else:
@@ -52,6 +53,6 @@ class Config:
 
         for str_key in Theme.KEYS:
             for theme in themes:
-                bytes_block += getattr(theme, str_key).as_bytes()
+                bytes_block += getattr(theme, str_key).as_bytes(byteorder=byteorder)
 
         return bytes_block
