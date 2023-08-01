@@ -1,2 +1,13 @@
-0.0.1 (06/06/2023)
-First release
+## 0.0.2 (01/08/2023)
+- Add experimental Big Endian support
+- Add first test
+- Add 4-bit colors 8-bit colors support
+- Add module-level imports to allow third-party usage
+- Remove two lines of unused code
+- Fix Ncdu path reading to prefer absolute paths
+- Fix configuration files parsing with nullish offsets
+- Fix missing -h (short for --help) flag
+- Improve README (fix typos, add new examples, add a specially designed animation, etc)
+
+## 0.0.1 (06/06/2023)
+- First release
