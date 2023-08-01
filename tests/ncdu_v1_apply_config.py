@@ -105,7 +105,7 @@ class NcduV1(unittest.TestCase):
         ncdu.apply_config(
             Config.from_dict(
                 json.loads(
-                    (Path(__file__).parent.with_name("assets") / "examples" / "ncdu_yellow.json").read_text()
+                    (Path(__file__).parent.with_name("assets") / "examples" / "ncdu_color208_(8-bit).json").read_text()
                 )
             )
         )
