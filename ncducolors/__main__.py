@@ -19,7 +19,7 @@ Usage:
   ncducolors [--ncdu PATH] apply-config <FILE>
   ncducolors [--ncdu PATH] revert (--offset INT | --config FILE)
   ncducolors [--ncdu PATH] dump-internal-default-config [--compact]
-             [--with[out]-darkbg] [--[little|big]-endian]
+             [--with[out]-darkbg] [--(little|big)-endian]
   ncducolors (-h | --help)
   ncducolors --version
 
