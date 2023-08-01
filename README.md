@@ -1,8 +1,17 @@
 ![NcduColors preview](assets/images/colorful_preview.png "Preview of Ncdu fully Red, Green, Yellow, Blue, Magenta, Cyan")
 
-![PyPI](https://img.shields.io/pypi/v/ncducolors?color=%23ff6644&style=flat-square)
-![Dependencies: 0](https://img.shields.io/badge/dependencies-0-green?style=flat-square&logo=PyPi&logoColor=green)
-![License: MIT](https://img.shields.io/github/license/Midblyte/NcduColors?style=flat-square&logo=Unlicense&color=blue&logoColor=blue)
+<!--suppress HtmlDeprecatedAttribute -->
+<p align="center">
+  <a href="https://pypi.org/project/NcduColors/">
+    <img src="https://img.shields.io/badge/PyPi-blue?logo=PyPi&logoColor=white&label=Install%20on&labelColor=green&color=blue&cacheSeconds=36000" alt="Install on PyPi" width="75%">
+  </a>
+
+  ![PyPI](https://img.shields.io/pypi/v/ncducolors?color=%23ff6644&style=flat-square)
+  ![Dependencies: 0](https://img.shields.io/badge/dependencies-0-green?style=flat-square&logo=PyPi&logoColor=green)
+  ![License: MIT](https://img.shields.io/github/license/Midblyte/NcduColors?style=flat-square&logo=Unlicense&color=blue&logoColor=blue)
+
+</p>
+
 
 # Table of content
 
@@ -27,7 +36,7 @@
 >       - [Attribute object](#attribute-object)
 > - [Examples](#examples)
 > - [What has changed?](#what-has-changed)
-> - [Disclaimer](#disclaimer)
+> - [Tests](#tests)
 > - [Future improvements](#future-improvements)
 > - [License](#license)
 
@@ -235,20 +244,61 @@ In case something goes wrong, or you just want the plain old Ncdu, don't worry. 
 
 ### Color object
 
-#### 3-bit colors
+#### 3-bit and 4-bit colors
 
-Have a look [here](https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit) - the 3-bit colors are terminal-dependent.
+Standard colors and high intensity colors - have a look [here](https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit) - 3-bit and 4-bit colors are terminal-dependent, thus their usage is discouraged (prefer [8-bit colors](#8-bit-colors), if possible).
 
-| name    | bit value |
-|---------|-----------|
-| Black   | 0         |
-| Red     | 1         |
-| Green   | 2         |
-| Yellow  | 3         |
-| Blue    | 4         |
-| Magenta | 5         |
-| Cyan    | 6         |
-| White   | 7         |
+| name                  | bit value |
+|-----------------------|-----------|
+| Black                 | 0         |
+| Red                   | 1         |
+| Green                 | 2         |
+| Yellow                | 3         |
+| Blue                  | 4         |
+| Magenta               | 5         |
+| Cyan                  | 6         |
+| White                 | 7         |
+| Bright_Black ("Gray") | 8         |
+| Bright_Red            | 9         |
+| Bright_Green          | 10        |
+| Bright_Yellow         | 11        |
+| Bright_Blue           | 12        |
+| Bright_Magenta        | 13        |
+| Bright_Cyan           | 14        |
+| Bright_White          | 15        |
+
+Note: these first 16 colors are aliased to `Color0`, `Color1`, and so on, until `Color15`.
+In other words, each of the first 16 colors can be represented in two different ways.
+
+This way, `Color0` is Black, `Color8` is Bright_Black (or Gray), and so on.
+
+
+#### 8-bit colors
+
+Even 8-bit colors are serialized in the format `ColorN`, where `N` is any number from 0 to 255.
+
+<!--suppress HtmlDeprecatedAttribute -->
+<img alt="8-bit 216 colors cube (3D)" hspace="10px" align="right" width="100px" height="125px" src="assets/images/cube_animated_preview.webp">
+
+- Colors 0 to 15 are the [3-bit and 4-bit colors](#3-bit-and-4-bit-colors), so nothing new there;
+- Colors 16 to 231 are:
+  - part of a 6 × 6 × 6 RGB cube (216 colors in total);
+  - mathematical formula: $${\textbf{N} = 36 \cdot \color{red}{\textbf{R}} + 6 \cdot \color{green}{\textbf{G}} + \color{blue}{\textbf{B}} + 16}$$, with $${0 \le \color{red}{\textbf{R}}, \color{green}{\textbf{G}}, \color{blue}{\textbf{B}} \le 5}$$;
+  - look to [this nice palette](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) for more information and for the lookup-table;
+- Colors 232 to 255 are a grayscale from dark gray (`Color232`) to light gray (`Color255`) in 24 steps.
+  - `Color232` (Dark gray) is aliased to `Gray1`, while `Color255` (Light gray) is aliased to `Gray24`, and so on for the colors in the middle.
+
+
+#### 24-bit colors
+
+Seems like there's no simple way to support them (without recreating the entire binary): NcduColors can only allocate 16 bits for the foreground color and 16 bits for the background color.
+
+
+#### Default colors
+
+It's the case of `null` value (preferred) or any other unknown color name.
+
+For example, in a white over black terminal, foreground color becomes white and background color becomes black.
 
 
 ### Attribute object
@@ -310,21 +360,14 @@ This will output a 15-rows long hex dump, wide 2 or 3 columns (in groups of 2x4 
 <sup>_Example - Ncdu 1.15.1 defaults compared to a custom theme_</sup>
 
 
-## Disclaimer
+## Tests
 
-This software was created in just a couple of days of work.
-
-It may contain bugs or could not work at all (in these cases, please open an issue).
-
-Of course, don't expect any sort of legal warranty at all.
+You need to install `autoreconf`, `autoupdate` and a C compiler to run the tests; `gcc` is recommended.
 
 
 ## Future improvements
 
-- Add support for 4-bit and 8-bit colors.
-- Add support for Big Endian binaries.
 - Add support for Ncdu2 (the newer Zig version).
-- Add tests
 
 
 ## License
