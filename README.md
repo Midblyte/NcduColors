@@ -1,9 +1,9 @@
-![NcduColors preview](assets/images/colorful_preview.png "Preview of Ncdu fully Red, Green, Yellow, Blue, Magenta, Cyan")
+![NcduColors preview](https://raw.githubusercontent.com/Midblyte/NcduColors/main/assets/images/colorful_preview.png "Preview of Ncdu fully Red, Green, Yellow, Blue, Magenta, Cyan")
 
 <!--suppress HtmlDeprecatedAttribute -->
 <p align="center">
   <a href="https://pypi.org/project/NcduColors/">
-    <img src="https://img.shields.io/badge/PyPi-blue?logo=PyPi&logoColor=white&label=Install%20on&labelColor=green&color=blue&cacheSeconds=36000" alt="Install on PyPi" width="75%">
+    <img src="https://img.shields.io/badge/PyPi-blue?logo=PyPi&logoColor=white&label=Install%20on&labelColor=green&color=blue&cacheSeconds=36000" alt="Install on PyPi" width="40%">
   </a>
 
   ![PyPI](https://img.shields.io/pypi/v/ncducolors?color=%23ff6644&style=flat-square)
@@ -58,7 +58,7 @@ The [3-bit and 4-bit](https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4
 
 Because of this, the two colorful themes, `dark` and `darkbg`, are hardly usable for many.
 
-![Example of the mess of 3-bit and 4-bit colors compatibility has caused](assets/images/broken_dark.png "Ncdu 1.15.1 dark theme on Konsole")
+![Example of the mess of 3-bit and 4-bit colors compatibility has caused](https://raw.githubusercontent.com/Midblyte/NcduColors/main/assets/images/broken_dark.png "Ncdu 1.15.1 dark theme on Konsole")
 
 <sup>_Something is definitely off_</sup></div>
 
@@ -283,7 +283,7 @@ Even 8-bit colors are serialized in the format `ColorN`, where `N` is any number
 - Colors 0 to 15 are the [3-bit and 4-bit colors](#3-bit-and-4-bit-colors), so nothing new there;
 - Colors 16 to 231 are:
   - part of a 6 × 6 × 6 RGB cube (216 colors in total);
-  - mathematical formula: $${\textbf{N} = 36 \cdot \color{red}{\textbf{R}} + 6 \cdot \color{green}{\textbf{G}} + \color{blue}{\textbf{B}} + 16}$$, with $${0 \le \color{red}{\textbf{R}}, \color{green}{\textbf{G}}, \color{blue}{\textbf{B}} \le 5}$$;
+  - mathematical formula: $${\textbf{N} = 36 \cdot {\color{red}{\textbf{R}}} + 6 \cdot {\color{green}{\textbf{G}}} + {\color{blue}{\textbf{B}}} + 16 \hspace{1em} \text{where} \space 0 \le {\color{red}{\textbf{R}}}, {\color{green}{\textbf{G}}}, {\color{blue}{\textbf{B}}} \le 5}$$
   - look to [this nice palette](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit) for more information and for the lookup-table;
 - Colors 232 to 255 are a grayscale from dark gray (`Color232`) to light gray (`Color255`) in 24 steps.
   - `Color232` (Dark gray) is aliased to `Gray1`, while `Color255` (Light gray) is aliased to `Gray24`, and so on for the colors in the middle.
@@ -334,7 +334,7 @@ A value of `null` resets all attributes.
 
 ## Examples
 
-Check the [examples/](assets/examples) subdirectory.
+Check the [examples/](https://github.com/Midblyte/NcduColors/tree/main/assets/examples) subdirectory.
 
 
 ## What has changed?
@@ -355,7 +355,7 @@ colordiff -y \
 
 This will output a 15-rows long hex dump, wide 2 or 3 columns (in groups of 2x4 bytes).
 
-![Colordiff used to compare two binary sequences](assets/images/colordiff.png "Ncdu 1.15.1 defaults compared to a custom theme")
+![Colordiff used to compare two binary sequences](https://raw.githubusercontent.com/Midblyte/NcduColors/main/assets/images/colordiff.png "Ncdu 1.15.1 defaults compared to a custom theme")
 
 <sup>_Example - Ncdu 1.15.1 defaults compared to a custom theme_</sup>
 
@@ -372,6 +372,6 @@ You need to install `autoreconf`, `autoupdate` and a C compiler to run the tests
 
 ## License
 
-[MIT License](LICENSE.txt).
+[MIT License](https://raw.githubusercontent.com/Midblyte/NcduColors/main/LICENSE.txt).
 
 This means you can use it everywhere, in both private and commercial contexts, for every possible purpose (you can even re-distribute it), as long as you preserve copyright and license notices.
